@@ -1,0 +1,2 @@
+Do all your input and output from main.  Pass the data as arguments to the functions.
+  Try not to avoid reference parameters, and instead use a return statement to pass the computed values back to main.  You say your function letter grade returns a char, but instead you output it to the file.  You should return finalGrade (instead of 0) and then output the character in main.  This is a better organization of the program.
