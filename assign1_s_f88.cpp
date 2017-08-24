@@ -1,6 +1,4 @@
-/*File Name: assign1_s_f88.cpp
-
-Author: Shane Fleming
+uthor: Shane Fleming
 Date: 01/27/16
 Assignment Number: 1
 CS 2308.257 Spring 2016
@@ -18,20 +16,19 @@ using namespace std;
   ifstream fin;  //opening file in "fin"
   ofstream fout; //opening file out "fout"
 
-float examtot = 0;
-
 //*****************************************************************
-// cal:  Calculates the average for 5 exam scores, dropping lowest grade 
+// ex:  Calculates the average for 5 exam scores, dropping lowest grade 
 // returns the total points of the exams as a int
 //*****************************************************************
 
- int cal (int &examtot)
+ int ex (int &examtot)
     {
     int  low, examscore [5];
     int x = 1;
-          fin >> examscore[0];
-          low = examscore[0]; 
-            while (x < 5)
+            fin >> examscore[0];
+            low = examscore[0]; 
+               
+          while (x < 5)
                {
                    fin >> examscore[x];
            if (examscore[x] < low)
@@ -42,8 +39,26 @@ float examtot = 0;
                       examtot = (examscore[0] + examscore[1] + examscore[2] + 
                       examscore[3] + examscore[4] - low);
 
-                          cout << examtot << " " << low << endl;
-    
+          return 0;
+
+     }
+
+//*****************************************************************
+// ass:  Adds the four assignments grades together
+// returns the total points of the assignments as a int
+//*****************************************************************
+
+ int ass (int &asstot)
+    {
+        int ass[4], x = 0;
+        
+            while (x < 3)
+               {
+                   fin >> ass[x];
+                      asstot += ass[x];
+                    x++;
+                }
+
           return 0;
 
      }
@@ -56,11 +71,18 @@ int main()
 
 string id;
 fin >> id;
-int test, p;
+int extotal = 0, asstotal = 0, m;
 
 cout << id << " ";
-cal(test);
-cout << test << endl;
+
+ex(extotal);
+cout << extotal << endl;
+
+fin >> m;
+cout << m << endl;
+
+ass(asstotal);
+cout << asstotal << endl;
 
 return 0;
 }
